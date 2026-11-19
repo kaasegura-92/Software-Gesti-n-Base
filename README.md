@@ -1,6 +1,9 @@
 # Software-Gesti-n-Base
 Software de Gestión Comercial
 
+# Software-Gesti-n-Base
+Software de Gestión Comercial
+
 
 Proyecto independiente iniciado desde la copia verificada del sistema original Planeta 24. El kiosco operativo y sus respaldos no se modificaron.
 
