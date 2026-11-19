@@ -88,7 +88,7 @@ function p24IsFirstWeek(){const start=Date.parse(p24AudioWeekStart()+'T12:00:00Z
 function p24SoftSunday(){const C=window.AudioContext||window.webkitAudioContext;if(!C){$('p24AudioStatus').textContent='Audio no disponible';return}p24AudioCtx=p24AudioCtx||new C();p24AudioCtx.resume();const notes=[392,440,523,440,392,330,392,523];const now=p24AudioCtx.currentTime+.05;notes.forEach((freq,i)=>{const o=p24AudioCtx.createOscillator(),g=p24AudioCtx.createGain(),t=now+i*.62;o.type='sine';o.frequency.value=freq;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.035,t+.04);g.gain.exponentialRampToValueAtTime(.0001,t+.52);o.connect(g);g.connect(p24AudioCtx.destination);o.start(t);o.stop(t+.54);p24AudioNodes.push(o)});$('p24AudioStatus').textContent='☀️ Domingo tranquilo · melodía suave original'}
 function p24PickClip(day){if(day===0)return null;if(p24IsFirstWeek())return p24FirstWeek[day];const ids=Object.keys(p24AudioClips).map(Number);return ids[Math.floor(Math.random()*ids.length)]}
 function p24PlaySound(){p24AudioStatus.textContent='El audio es opcional y está desactivado en esta base.'}
-p24PlaySound').onclick=()=>{p24Muted=false;p24PlaySound()};
+$('p24PlaySound').onclick=()=>{p24Muted=false;p24PlaySound()};
 $('p24MuteSound').onclick=()=>{p24Muted=true;p24StopSound();$('p24AudioStatus').textContent='🔇 Sonido silenciado'};
 function p24ShowAlien(day,force=false){
  const today=dayAR();const user=($('who')?.textContent||'').trim();const key=user+'|'+today;
