@@ -32,3 +32,6 @@ Para Cloudflare Pages, usar `public` como directorio de salida. Ese directorio c
 3. Ajustar autorización, usuarios y esquema de datos antes de habilitar operaciones.
 4. Revisar referencias específicas de kiosco para convertirlas en genéricas o dejarlas opcionales.
 5. Conectar este proyecto a un repositorio GitHub nuevo, separado del repositorio del kiosco.
+## Base de datos
+
+Los scripts de instalación y el detalle están en `database/`. El esquema inicial no copia datos del kiosco y es exclusivo para el Supabase nuevo y vacío. Ejecutarlo solo una vez; ver `database/README.md` antes de empezar.
